@@ -1,0 +1,9 @@
+COMPRENDRE LE PROJET
+=====================
+
+Saisir la commande :
+1. pip install openai python-dotenv
+Explication : 
+=============
+openai → permet à ton programme Python de communiquer avec l'API OpenAI.
+python-dotenv → permet de charger ta clé API depuis un fichier .env sans la mettre directement dans ton code.
