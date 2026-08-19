@@ -1,0 +1,56 @@
+Commande pour lancer la bd 
+docker run -p 6333:6333 qdrant/qdrant
+
+dependance a installer
+
+pip install langchain langchain-community langchain-text-splitters
+pip install langchain-qdrant
+pip install langchain-huggingface
+pip install sentence-transformers
+pip install qdrant-client
+pip install langgraph
+pip install langchain-google-genai
+pip install fastapi uvicorn
+pip install pypdf python-dotenv
+pip install langchain langchain-community langchain-text-splitters langchain-qdrant langchain-huggingface sentence-transformers qdrant-client langgraph langchain-google-genai fastapi uvicorn pypdf python-dotenv
+
+A quoi sert cette solution ??
+
+Architechture de la solution
+
+                    DOCUMENTS
+                 PDF / TXT / DOCX
+                       │
+                       ▼
+                ┌─────────────┐
+                │  LangChain  │
+                │ Load + Chunk│
+                └──────┬──────┘
+                       │
+                       ▼
+              Sentence Transformers
+                   Embeddings
+                       │
+                       ▼
+                 ┌──────────┐
+                 │  Qdrant  │
+                 └────┬─────┘
+                      │
+                      │ recherche
+                      ▼
+Question ──────► LangGraph
+                      │
+                      ▼
+              Contexte pertinent
+                      │
+                      ▼
+                 Gemini API
+                      │
+                      ▼
+                   Réponse
+                      │
+                      ▼
+                  FastAPI
+
+
+Description du projet
